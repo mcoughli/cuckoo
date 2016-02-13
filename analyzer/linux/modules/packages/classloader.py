@@ -51,7 +51,15 @@ class Classloader(Package):
         print 'test'
         self.analyzer_outfile = self.get_strace_outfile_name(path)[0]
         print 'test2'
-        analyzer = Strace_Analyzer(path, generate_file_name=False, outfile=self.analyzer_outfile, scanner_location="/home/cuckoo/scanner.jar")
+#         scanner = self.options['scanner']
+        scanner = "/home/cuckoo/scanner.jar"
+        if scanner is None:
+            scanner = "/home/cuckoo/scanner.jar"
+        minecraft_dir = self.options['minecraft']
+        if minecraft_dir is None:
+            minecraft_dir = '~/.minecraft'
+        
+        analyzer = Strace_Analyzer(path, generate_file_name=False, outfile=self.analyzer_outfile, scanner_location=scanner, minecraft_dir=minecraft_dir)
 #         mExecutor = mProcess(target=analyzer)
 #         mExecutor.start()
 #         cWatcher = cuckooProcess(pid=mExecutor.pid())

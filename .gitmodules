@@ -1,4 +1,0 @@
-[submodule "analyzer/linux/modules/packages/strace_analyzer"]
-	path = analyzer/linux/modules/packages/strace_analyzer
-	url = git@github.com:mcoughli/minecraft_malware.git
-	branch = master
